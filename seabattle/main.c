@@ -4,18 +4,32 @@
 #include <string.h>
 #include <stdbool.h>
 
+typedef struct point{
+    int x;
+    int y;
+}point;
+
+typedef struct boat{
+    int size;
+    point one;
+    point second;
+
+} boat;
+
 char *a="WCE";
 int firstP[10][10]={0};
 int secondP[10][10]={0};
-
-
+boat firstB[15];
+boat secondB[15];
 
 void printMap();
+void checkBoat();
+void makeBoat();
 
 
 int main() {
 
-    printMap();
+
 
 
 }
