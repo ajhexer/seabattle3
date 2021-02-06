@@ -36,18 +36,10 @@ void loadGame();
 void clearBoat(boat b,int pMap[10][10]);
 void start();
 void update();
+void turn();
 
 int main() {
-    point one;
-    point two;
-    one.x=0;
-    one.y=0;
-    two.x=0;
-    two.y=2;
-    makeBoat(one,two,0,first,firstB);
-    printMap();
-    clearBoat(firstB[0],firstP);
-    printMap();
+
 
 
 
@@ -146,6 +138,18 @@ void clearBoat(boat b,int pMap[10][10]){
         if(two.y<9){
             pMap[two.x][two.y+1]=1;
         }
+        if(one.x>0&&one.y>0){
+            pMap[one.x-1][one.y-1]=1;
+        }
+        if(one.x<9&&one.y>0){
+            pMap[one.x+1][one.y-1]=1;
+        }
+        if(two.x>0&&two.y<9){
+            pMap[two.x-1][two.y+1]=1;
+        }
+        if(two.x<9&&two.y<9){
+            pMap[two.x+1][two.y+1]=1;
+        }
 
 
     }else if(one.y==two.y){
@@ -162,9 +166,22 @@ void clearBoat(boat b,int pMap[10][10]){
         }
         if(one.x>0){
             pMap[one.x-1][one.y]=1;
+
         }
         if(two.x<9){
             pMap[two.x+1][two.y]=1;
+        }
+        if(one.x>0&&one.y>0){
+            pMap[one.x-1][one.y-1]=1;
+        }
+        if(one.x>0&&one.y<9){
+            pMap[one.x-1][one.y+1]=1;
+        }
+        if(two.x<9&&two.y<0){
+            pMap[two.x+1][two.y-1]=1;
+        }
+        if(two.x<9&&two.y<9){
+            pMap[two.x+1][two.y+1]=1;
         }
 
 
