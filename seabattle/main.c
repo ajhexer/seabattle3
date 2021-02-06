@@ -26,6 +26,8 @@ bool second[10][10]={0};
 boat firstB[15];
 boat secondB[15];
 bool flag=true;
+char firstPName[100];
+char secondPName[100];
 
 void printMap();
 bool checkPoint(point one,point two,point three);
@@ -37,16 +39,21 @@ void clearBoat(boat b,int pMap[10][10]);
 void start();
 void update();
 void turn();
+void createPM(int map[10][10],bool check[10][10],boat pBoats[15]);
+void createBM();
+
 
 int main() {
 
 
-
+    start();
+//    while(flag){
+//        update();
+//    }
 
 
 
 }
-
 
 
 void printMap(){
@@ -189,10 +196,64 @@ void clearBoat(boat b,int pMap[10][10]){
 }
 
 
-//void start(){
-//    loadGame();
-//}
+void start(){
+    int n;
+    printf("1. Play with a Friend\n2. Play with bot\n3. Load game\n4. Setting\n");
+    scanf("%d",&n);
+    if(n==1){
+        printf("Enter first player name: \n");
+        scanf("%s",firstPName);
+        printf("Enter second player name: \n");
+        scanf("%s",secondPName);
+        createPM(firstP,first,firstB);
+        createPM(secondP,second,secondB);
 
+
+    }else if(n==2){
+        printf("Enter your name: \n");
+        scanf("%s",firstPName);
+        secondPName[0]='B';
+        secondPName[1]='O';
+        secondPName[2]='T';
+        createPM(firstP,first,firstB);
+
+    }else if(n==3){
+
+    }else if(n==4){
+
+    }
+}
+void createPM(int map[10][10],bool check[10][10],boat pBoats[15]){
+    point one,two;
+    printf("Enter positions for ship of size 5: \n");
+    scanf("%d %d",&one.x,&one.y);
+    scanf("%d %d",&two.x,&two.y);
+    makeBoat(one,two,0,check,pBoats);
+    for(int i=1;i<3;i++){
+        printf("Enter positions for ship of size 3: \n");
+        scanf("%d %d",&one.x,&one.y);
+        scanf("%d %d",&two.x,&two.y);
+        makeBoat(one,two,i,check,pBoats);
+    }
+    for(int i=3;i<6;i++){
+        printf("Enter positions for ship of size 2: \n");
+        scanf("%d %d",&one.x,&one.y);
+        scanf("%d %d",&two.x,&two.y);
+        makeBoat(one,two,i,check,pBoats);
+    }
+    for(int i=6;i<10;i++){
+        printf("Enter positions for ship of size 1: \n");
+        scanf("%d %d",&one.x,&one.y);
+        scanf("%d %d",&two.x,&two.y);
+        makeBoat(one,two,i,check,pBoats);
+    }
+
+}
+void creatBM(){
+
+
+
+}
 
 
 
