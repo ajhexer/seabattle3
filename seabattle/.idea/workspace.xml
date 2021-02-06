@@ -20,7 +20,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018fe2d9-576b-4e14-b0c9-8ee9121426a0" name="Default Changelist" comment="" />
+    <list default="true" id="018fe2d9-576b-4e14-b0c9-8ee9121426a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/main.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/seabattle.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/seabattle.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +68,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1612537853404</updated>
-      <workItem from="1612537859279" duration="2376000" />
+      <workItem from="1612537859279" duration="3585000" />
+      <workItem from="1612607302395" duration="1323000" />
+      <workItem from="1612608659873" duration="3949000" />
     </task>
     <servers />
   </component>
@@ -79,23 +87,28 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="795" key="GridCell.Tab.0.bottom" timestamp="1612539646157">
+    <state width="1877" height="292" key="GridCell.Tab.0.bottom" timestamp="1612613240207">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="795" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612539646157" />
-    <state width="1877" height="795" key="GridCell.Tab.0.center" timestamp="1612539646157">
+    <state width="1877" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612613240207" />
+    <state width="1877" height="292" key="GridCell.Tab.0.center" timestamp="1612613240207">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="795" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612539646157" />
-    <state width="1877" height="795" key="GridCell.Tab.0.left" timestamp="1612539646156">
+    <state width="1877" height="292" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612613240207" />
+    <state width="1877" height="292" key="GridCell.Tab.0.left" timestamp="1612613240207">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="795" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612539646156" />
-    <state width="1877" height="795" key="GridCell.Tab.0.right" timestamp="1612539646157">
+    <state width="1877" height="292" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612613240207" />
+    <state width="1877" height="292" key="GridCell.Tab.0.right" timestamp="1612613240207">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="795" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612539646157" />
+    <state width="1877" height="292" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612613240207" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1612607655706">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612607655706" />
   </component>
 </project>
