@@ -21,7 +21,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="018fe2d9-576b-4e14-b0c9-8ee9121426a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/saved.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/seabattle.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/seabattle.exe" afterDir="false" />
@@ -50,6 +52,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="seabattle" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="seabattle" TARGET_NAME="seabattle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="seabattle" RUN_TARGET_NAME="seabattle">
@@ -71,7 +74,15 @@
       <workItem from="1612537859279" duration="3585000" />
       <workItem from="1612607302395" duration="1323000" />
       <workItem from="1612608659873" duration="5087000" />
-      <workItem from="1612633654348" duration="5013000" />
+      <workItem from="1612633654348" duration="5039000" />
+      <workItem from="1612678122612" duration="1261000" />
+      <workItem from="1612681049958" duration="735000" />
+      <workItem from="1612683826881" duration="501000" />
+      <workItem from="1612721065682" duration="8604000" />
+      <workItem from="1612783717557" duration="3901000" />
+      <workItem from="1612802335360" duration="1809000" />
+      <workItem from="1612807870316" duration="398000" />
+      <workItem from="1612808290638" duration="4206000" />
     </task>
     <servers />
   </component>
@@ -91,22 +102,30 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="247" key="GridCell.Tab.0.bottom" timestamp="1612641595812">
+    <state x="838" y="404" key="FileChooserDialogImpl" timestamp="1612783822153">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612641595812" />
-    <state width="1877" height="247" key="GridCell.Tab.0.center" timestamp="1612641595812">
+    <state x="838" y="404" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612783822153" />
+    <state width="1860" height="482" key="GridCell.Tab.0.bottom" timestamp="1612812509458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="247" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612641595812" />
-    <state width="1877" height="247" key="GridCell.Tab.0.left" timestamp="1612641595812">
+    <state width="1860" height="482" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612812509458" />
+    <state width="1860" height="482" key="GridCell.Tab.0.center" timestamp="1612812509458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="247" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612641595812" />
-    <state width="1877" height="247" key="GridCell.Tab.0.right" timestamp="1612641595812">
+    <state width="1860" height="482" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612812509458" />
+    <state width="1860" height="482" key="GridCell.Tab.0.left" timestamp="1612812509458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="247" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612641595812" />
+    <state width="1860" height="482" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612812509458" />
+    <state width="1860" height="482" key="GridCell.Tab.0.right" timestamp="1612812509458">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="482" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612812509458" />
+    <state x="461" y="212" key="SettingsEditor" timestamp="1612808272591">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="212" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1612808272591" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1612607655706">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
