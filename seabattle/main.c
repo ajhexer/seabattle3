@@ -43,7 +43,7 @@ int playersNum=0;
 int scores[5] = {25,12,8,0,5};
 int playersId[2];
 bool finished=false;
-
+int lens[2];
 
 //---------------------------------------------------------------------------
 void printMap(int n);
@@ -64,14 +64,13 @@ void addPlayer(char name[100],int n);
 void autoPM(bool check[10][10],boat pBoats[10],int n);
 
 
+
 int main() {
     start();
     update();
 
 
 }
-
-
 void printMap(int n){
     for(int j=0;j<10;j++) {
         printf("-----------------------------------------------------------------------------------------------------\n");
@@ -236,17 +235,22 @@ void start(){
             if(temb==0){
                 printf("Cannot find data\n");
                 start();
+            }else if(temb==3){
+                printf("There is no available user!!\n\n");
+                start();
             }
             for (int i = 0; i < playersNum; i++) {
                 printf("%d. Name: %s Score: %d\n", i+1,players[i].name, players[i].score);
             }
             scanf("%d",&n);
             strcpy(names[0],players[n].name);
+            lens[0]=strlen(names[0]);
             playersId[0]=n;
 
         }else if(n==2){
             printf("Enter first player name: \n");
             scanf("%s",names[0]);
+            lens[0]=strlen(names[0]);
             addPlayer(names[0],0);
 
 
@@ -259,17 +263,22 @@ void start(){
             if(temb==0){
                 printf("Cannot find data\n");
                 start();
+            }else if(temb==3){
+                printf("There is no available user!!\n\n");
+                start();
             }
             for (int i = 0; i < playersNum; i++) {
                 printf("%d. Name: %s Score: %d\n", i+1,players[i].name, players[i].score);
             }
             scanf("%d",&n);
             strcpy(names[1],players[n].name);
+            lens[1]=strlen(names[1]);
             playersId[1]=n;
 
         }else if(n==2){
             printf("Enter second player name: \n");
             scanf("%s",names[1]);
+            lens[1]=strlen(names[1]);
             addPlayer(names[1],1);
 
         }
@@ -299,17 +308,22 @@ void start(){
             if(temb==0){
                 printf("Cannot find data\n");
                 start();
+            }else if(temb==3){
+                printf("There is no available user!!\n\n");
+                start();
             }
             for (int i = 0; i < playersNum; i++) {
                 printf("%d. Name: %s Score: %d\n", i+1,players[i].name, players[i].score);
             }
             scanf("%d",&n);
             strcpy(names[0],players[n].name);
+            lens[0]=strlen(names[0]);
             playersId[0]=n;
 
         }else if(n==2){
             printf("Enter first player name: \n");
             scanf("%s",names[0]);
+            lens[0]=strlen(names[0]);
             addPlayer(names[0],0);
 
 
@@ -317,6 +331,7 @@ void start(){
         names[1][0]='B';
         names[1][1]='O';
         names[1][2]='T';
+        lens[1]=strlen(names[1]);
         createPM(playersCheck[0],playersBoat[0],0);
         createBM();
 
@@ -328,13 +343,23 @@ void start(){
         }else if(temb==1){
             printf("The last game if finished\n");
             start();
+        }else if(temb==3){
+            printf("There is no last game!\n\n");
+            start();
+        }else{
+            printMap(1-curT);
+            return;
         }
     }else if(n==4){
         int temb =loadGame();
         if(temb==0){
             printf("Cannot find data\n");
             start();
-            }else {
+        }else if(temb==3){
+            printf("ScoreBoard is empty!!\n\n");
+            start();
+
+        }else {
 
 
             for (int i = 0; i < playersNum; i++) {
@@ -493,10 +518,17 @@ void createBM(){
 }
 
 int loadGame(){
-    FILE * svd = fopen("E:/Dev/seabattle3/seabattle/saved.bin","rb");
+    FILE * svd = fopen("C:/seabattle3/seabattle/saved.bin","rb");
     if(svd==NULL){
+        fclose(svd);
         return 0;
     }
+    fseek(svd,0,SEEK_END);
+    if(ftell(svd)==0){
+        fclose(svd);
+        return 3;
+    }
+    fseek(svd,0,SEEK_SET);
     fread(&finished,sizeof(bool),1,svd);
     if(finished){
         fread(&playersNum,sizeof(int),1,svd);
@@ -519,8 +551,9 @@ int loadGame(){
     for(int i=0;i<2;i++){
         fread(playersBoat[i],sizeof(boat),10,svd);
     }
+    fread(lens,sizeof(int),2,svd);
     for(int i=0;i<2;i++){
-        fread(names[i],sizeof(char),strlen(names[i]),svd);
+        fread(names[i],sizeof(char),lens[i],svd);
     }
     fread(&curT,sizeof(int),1,svd);
     fread(playersExploded,sizeof(int),2,svd);
@@ -532,7 +565,7 @@ int loadGame(){
 }
 void saveGame(){
 
-    FILE * svd = fopen("E:/Dev/seabattle3/seabattle/saved.bin","wb");
+    FILE * svd = fopen("C:/seabattle3/seabattle/saved.bin","wb");
     fwrite(&finished,sizeof(bool),1,svd);
     fwrite(&playersNum,sizeof(int),1,svd);
     fwrite(players,sizeof(player),playersNum,svd);
@@ -549,8 +582,9 @@ void saveGame(){
     for(int i=0;i<2;i++){
         fwrite(playersBoat[i],sizeof(boat),10,svd);
     }
+    fwrite(lens,sizeof(int),2,svd);
     for(int i=0;i<2;i++){
-        fwrite(names[i],sizeof(char),strlen(names[i]),svd);
+        fwrite(names[i],sizeof(char),lens[i],svd);
     }
     fwrite(&curT,sizeof(int),1,svd);
     fwrite(playersExploded,sizeof(int),2,svd);
@@ -579,12 +613,10 @@ void autoPM(bool check[10][10],boat pBoats[10],int n){
     for(int k=1;k<3;k++){
         i.x=k;j.x=k;i.y=k%2==0 ? 0 : 7;j.y=k%2==0 ? 2 : 9;
         makeBoat(i,j,k,check,pBoats);
-        printTempMap(n);
     }
     for(int k=3;k<6;k++){
         i.x=k;j.x=k;i.y=k%2==0 ? 0 : 8;j.y=k%2==0 ? 1 : 9;
         makeBoat(i,j,k,check,pBoats);
-        printTempMap(n);
     }
     for(int k=6;k<10;k++){
         i.x=k;j.x=k;i.y=k%2==0 ? 0 : 9;j.y=k%2==0 ? 0 : 9;

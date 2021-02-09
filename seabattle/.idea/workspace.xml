@@ -21,7 +21,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="018fe2d9-576b-4e14-b0c9-8ee9121426a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/objects.a" afterDir="false" />
@@ -84,6 +83,11 @@
       <workItem from="1612802335360" duration="1809000" />
       <workItem from="1612807870316" duration="398000" />
       <workItem from="1612808290638" duration="4206000" />
+      <workItem from="1612876372864" duration="451000" />
+      <workItem from="1612892421052" duration="421000" />
+      <workItem from="1612892861365" duration="1049000" />
+      <workItem from="1612894103893" duration="55000" />
+      <workItem from="1612894209054" duration="2310000" />
     </task>
     <servers />
   </component>
@@ -107,22 +111,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="838" y="404" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612871296545" />
-    <state width="1877" height="638" key="GridCell.Tab.0.bottom" timestamp="1612876213750">
+    <state width="1877" height="637" key="GridCell.Tab.0.bottom" timestamp="1612898324975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="638" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612876213750" />
-    <state width="1877" height="638" key="GridCell.Tab.0.center" timestamp="1612876213750">
+    <state width="1877" height="637" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612898324975" />
+    <state width="1877" height="637" key="GridCell.Tab.0.center" timestamp="1612898324975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="638" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612876213750" />
-    <state width="1877" height="638" key="GridCell.Tab.0.left" timestamp="1612876213750">
+    <state width="1877" height="637" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612898324975" />
+    <state width="1877" height="637" key="GridCell.Tab.0.left" timestamp="1612898324975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="638" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612876213750" />
-    <state width="1877" height="638" key="GridCell.Tab.0.right" timestamp="1612876213750">
+    <state width="1877" height="637" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612898324975" />
+    <state width="1877" height="637" key="GridCell.Tab.0.right" timestamp="1612898324975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="638" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612876213750" />
+    <state width="1877" height="637" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612898324975" />
     <state x="461" y="212" key="SettingsEditor" timestamp="1612808272591">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
