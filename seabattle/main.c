@@ -35,11 +35,9 @@ char *tempMap=" S";
 int playersMap[2][10][10]={0};
 bool playersCheck[2][10][10];
 boat playersBoat[2][10];
-bool flag=true;
 char names[2][100];
 int curT;
-int playersExploded[2]={100,100};
-int boatsNum[2]={10,10};
+int playersExploded[2]={10,10};
 player players[1000];
 int playersNum=0;
 int scores[5] = {25,12,8,0,5};
@@ -63,11 +61,14 @@ void createBM();
 void printTempMap(int n);
 point randomPoint();
 void addPlayer(char name[100],int n);
+void autoPM(bool check[10][10],boat pBoats[10],int n);
 
 
 int main() {
     start();
     update();
+
+
 }
 
 
@@ -92,12 +93,11 @@ bool checkBoat(int x,int y,boat b[10],int pMap[10][10],int currP){
     for(int i=0;i<10;i++){
         if(b[i].explode){
             continue;
-        }
-        if(checkPoint(b[i].first, b[i].second, temp)){
-            b[i].explodedB++;
-            if(b[i].explodedB == b[i].size){
+        }else if(checkPoint(b[i].first, b[i].second, temp)){
+             b[i].explodedB+=1;
+            if(b[i].explodedB >= b[i].size){
                 b[i].explode=true;
-              clearBoat(b[i],pMap,currP);
+                clearBoat(b[i],pMap,currP);
             }
             return true;
         }
@@ -119,7 +119,7 @@ bool makeBoat(point i,point j,int ind,bool check[10][10],boat mBoat[10]){
         mBoat[ind].second=j;
         mBoat[ind].explode=false;
         mBoat[ind].explodedB=0;
-        mBoat[ind].size=i.y-j.y+1;
+        mBoat[ind].size=j.y-i.y+1;
         return true;
     }else if(i.y==j.y){
         for(int b=i.x;b<=j.x;b++){
@@ -134,16 +134,16 @@ bool makeBoat(point i,point j,int ind,bool check[10][10],boat mBoat[10]){
         mBoat[ind].second=j;
         mBoat[ind].explode=false;
         mBoat[ind].explodedB=0;
-        mBoat[ind].size=i.x-j.x+1;
+        mBoat[ind].size=j.x-i.x+1;
 
     }else{
         return false;
     }
 }
 bool checkPoint(point one,point two,point three){
-    if((one.x==two.x)&&(one.x==three.x)&&(three.y>=one.y&&three.y<=two.y)){
+    if((one.x==two.x)&&(one.x==three.x)&&(three.y>=one.y)&&(three.y<=two.y)){
         return true;
-    }else if((one.y==two.y)&&(one.y==three.y)&&(three.x>=one.x&&three.x<=two.x)){
+    }else if((one.y==two.y)&&(one.y==three.y)&&(three.x>=one.x)&&(three.x<=two.x)){
         return true;
     }else{
         return false;
@@ -155,13 +155,12 @@ void clearBoat(boat b,int pMap[10][10],int currP){
     point two=b.second;
     playersExploded[currP]--;
     if(one.x==two.x){
-        players[playersId[1-currP]].score+=abs(one.y-two.y);
+        players[playersId[1-currP]].score+=scores[abs(one.y-two.y)];
 
         for(int i=one.y;i<=two.y;i++){
             pMap[one.x][i]=3;
             if(one.x>0){
                 pMap[one.x-1][i]=1;
-
             }
             if(one.x<9){
                 pMap[one.x+1][i]=1;
@@ -188,7 +187,7 @@ void clearBoat(boat b,int pMap[10][10],int currP){
 
 
     }else if(one.y==two.y){
-        players[playersId[1-currP]].score+=abs(one.x-two.x);
+        players[playersId[1-currP]].score+=scores[abs(one.x-two.x)];
 
         for(int i=one.x;i<=two.x;i++){
             pMap[one.y][i]=3;
@@ -213,7 +212,7 @@ void clearBoat(boat b,int pMap[10][10],int currP){
         if(one.x>0&&one.y<9){
             pMap[one.x-1][one.y+1]=1;
         }
-        if(two.x<9&&two.y<0){
+        if(two.x<9&&two.y>0){
             pMap[two.x+1][two.y-1]=1;
         }
         if(two.x<9&&two.y<9){
@@ -239,7 +238,7 @@ void start(){
                 start();
             }
             for (int i = 0; i < playersNum; i++) {
-                printf("%d. Name: %s Score: %d", n,players[i].name, players[i].score);
+                printf("%d. Name: %s Score: %d\n", i+1,players[i].name, players[i].score);
             }
             scanf("%d",&n);
             strcpy(names[0],players[n].name);
@@ -262,7 +261,7 @@ void start(){
                 start();
             }
             for (int i = 0; i < playersNum; i++) {
-                printf("%d. Name: %s Score: %d", n,players[i].name, players[i].score);
+                printf("%d. Name: %s Score: %d\n", i+1,players[i].name, players[i].score);
             }
             scanf("%d",&n);
             strcpy(names[1],players[n].name);
@@ -274,13 +273,47 @@ void start(){
             addPlayer(names[1],1);
 
         }
-        createPM(playersCheck[0],playersBoat[0],0);
-        createPM(playersCheck[1],playersBoat[1],1);
+        printf("1. Auto generate map\n2. Manual\n");
+        scanf("%d",&n);
+        if(n==1){
+            autoPM(playersCheck[0],playersBoat[0],0);
 
+        }else{
+            createPM(playersCheck[0],playersBoat[0],0);
 
+        }
+        printf("1. Auto generate map\n2. Manual\n");
+        scanf("%d",&n);
+        if(n==1){
+            autoPM(playersCheck[1],playersBoat[1],1);
+
+        }else{
+            createPM(playersCheck[1],playersBoat[1],1);
+
+        }
     }else if(n==2){
-        printf("Enter your name: \n");
-        scanf("%s",names[0]);
+        printf("1. Choose from available users\n2. New user\n");
+        scanf("%d",&n);
+        if(n==1){
+            int temb =loadGame();
+            if(temb==0){
+                printf("Cannot find data\n");
+                start();
+            }
+            for (int i = 0; i < playersNum; i++) {
+                printf("%d. Name: %s Score: %d\n", i+1,players[i].name, players[i].score);
+            }
+            scanf("%d",&n);
+            strcpy(names[0],players[n].name);
+            playersId[0]=n;
+
+        }else if(n==2){
+            printf("Enter first player name: \n");
+            scanf("%s",names[0]);
+            addPlayer(names[0],0);
+
+
+        }
         names[1][0]='B';
         names[1][1]='O';
         names[1][2]='T';
@@ -305,15 +338,17 @@ void start(){
 
 
             for (int i = 0; i < playersNum; i++) {
-                printf("Name: %s Score: %d", players[i].name, players[i].score);
+                printf("%d. Name: %s Score: %d\n", i+1,players[i].name, players[i].score);
             }
+            printf("\n\n");
+            start();
         }
 
     }else if(n==5){
         exit(-1);
     }
 }
-void createPM(bool check[10][10],boat pBoats[15],int n){
+void createPM(bool check[10][10],boat pBoats[10],int n){
     point one,two;
     printf("Enter positions for ship of size 5: \n");
     scanf("%d %d",&one.x,&one.y);
@@ -371,7 +406,7 @@ bool turn(){
     point s;
     if(strcmp(names[curT],"BOT")==0){
         s=randomPoint();
-        while(!playersMap[temp][s.x][s.y]){
+        while(playersMap[temp][s.x][s.y]){
             s=randomPoint();
         }
         if(playersCheck[temp][s.x][s.y]){
@@ -396,8 +431,10 @@ bool turn(){
     scanf("%d %d", &s.x, &s.y);
     if(s.x == -1){
         return false;
-    }
-    if(playersCheck[temp][s.x][s.y]){
+    }if(playersMap[temp][s.x][s.y]){
+        printMap(temp);
+        return true;
+    }else if(playersCheck[temp][s.x][s.y]){
         playersMap[temp][s.x][s.y]=2;
         checkBoat(s.x, s.y, playersBoat[temp], playersMap[temp], temp);
         printMap(temp);
@@ -419,39 +456,40 @@ void update(){
     while(turn()){
 
     }
-    if(playersExploded[0]==0||boatsNum[0]==0){
+    if(playersExploded[0]==0){
         printf("Player %s won the game",names[1]);
-        flag=false;
         finished=true;
         saveGame();
-    }else if(playersExploded[1]==0||boatsNum[1]==0){
+    }else if(playersExploded[1]==0){
         printf("Player %s won the game",names[0]);
-        flag=false;
         finished=true;
         saveGame();
     }else{
-        flag=false;
         finished=false;
         saveGame();
     }
 }
 void createBM(){
-   point i;
-   point j;
-   i.x=0;i.y=0;j.x=0;j.y=4;
-   makeBoat(i,j,0,playersCheck[1],playersBoat[1]);
-   for(int k=1;k<3;k++){
-       i.x=k;j.x=k;i.y=0;j.y=2;
-       makeBoat(i,j,k,playersCheck[1],playersBoat[1]);
-   }
-   for(int k=3;k<6;k++){
-       i.x=k;j.x=k;i.y=0;j.y=1;
-       makeBoat(i,j,k,playersCheck[1],playersBoat[1]);
-   }
-   for(int k=6;k<10;k++){
-       i.x=k;j.x=k;i.y=0;j.y=0;
-       makeBoat(i,j,k,playersCheck[1],playersBoat[1]);
-   }
+    point i;
+    point j;
+    i.x=0;i.y=0;j.x=0;j.y=4;
+    makeBoat(i,j,0,playersCheck[1],playersBoat[1]);
+
+    for(int k=1;k<3;k++){
+        i.x=k;j.x=k;i.y=k%2==0 ? 0 : 7;j.y=k%2==0 ? 2 : 9;
+        makeBoat(i,j,k,playersCheck[1],playersBoat[1]);
+
+    }
+    for(int k=3;k<6;k++){
+        i.x=k;j.x=k;i.y=k%2==0 ? 0 : 8;j.y=k%2==0 ? 1 : 9;
+        makeBoat(i,j,k,playersCheck[1],playersBoat[1]);
+
+    }
+    for(int k=6;k<10;k++){
+        i.x=k;j.x=k;i.y=k%2==0 ? 0 : 9;j.y=k%2==0 ? 0 : 9;
+        makeBoat(i,j,k,playersCheck[1],playersBoat[1]);
+
+    }
 }
 
 int loadGame(){
@@ -463,8 +501,11 @@ int loadGame(){
     if(finished){
         fread(&playersNum,sizeof(int),1,svd);
         fread(players,sizeof(player),playersNum,svd);
+        fclose(svd);
         return 1;
     }
+    fread(&playersNum,sizeof(int),1,svd);
+    fread(players,sizeof(player),playersNum,svd);
     for(int j=0;j<2;j++){
         for(int i=0;i<10;i++){
             fread(playersMap[j][i],sizeof(int),10,svd);
@@ -483,7 +524,7 @@ int loadGame(){
     }
     fread(&curT,sizeof(int),1,svd);
     fread(playersExploded,sizeof(int),2,svd);
-    fread(boatsNum,sizeof(int),2,svd);
+    fread(playersId,sizeof(int),2,svd);
     fclose(svd);
     return 2;
 
@@ -513,7 +554,7 @@ void saveGame(){
     }
     fwrite(&curT,sizeof(int),1,svd);
     fwrite(playersExploded,sizeof(int),2,svd);
-    fwrite(boatsNum,sizeof(int),2,svd);
+    fwrite(playersId,sizeof(int),2,svd);
     fclose(svd);
 }
 point randomPoint() {
@@ -524,11 +565,33 @@ point randomPoint() {
 
 }
 void addPlayer(char name[100],int n){
-    strcmp(players[playersNum].name,name);
+    strcpy(players[playersNum].name,name);
     players[playersNum].score = 0;
     playersId[n]=playersNum;
     playersNum++;
 }
-
+void autoPM(bool check[10][10],boat pBoats[10],int n){
+    point i;
+    point j;
+    i.x=0;i.y=0;j.x=0;j.y=4;
+    makeBoat(i,j,0,check,pBoats);
+    printTempMap(n);
+    for(int k=1;k<3;k++){
+        i.x=k;j.x=k;i.y=k%2==0 ? 0 : 7;j.y=k%2==0 ? 2 : 9;
+        makeBoat(i,j,k,check,pBoats);
+        printTempMap(n);
+    }
+    for(int k=3;k<6;k++){
+        i.x=k;j.x=k;i.y=k%2==0 ? 0 : 8;j.y=k%2==0 ? 1 : 9;
+        makeBoat(i,j,k,check,pBoats);
+        printTempMap(n);
+    }
+    for(int k=6;k<10;k++){
+        i.x=k;j.x=k;i.y=k%2==0 ? 0 : 9;j.y=k%2==0 ? 0 : 9;
+        makeBoat(i,j,k,check,pBoats);
+        printTempMap(n);
+    }
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+}
 
 

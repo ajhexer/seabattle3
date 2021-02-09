@@ -21,13 +21,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="018fe2d9-576b-4e14-b0c9-8ee9121426a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/saved.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/seabattle.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/seabattle.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/seabattle.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saved.bin" beforeDir="false" afterPath="$PROJECT_DIR$/saved.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +50,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -102,26 +103,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="838" y="404" key="FileChooserDialogImpl" timestamp="1612783822153">
+    <state x="838" y="404" key="FileChooserDialogImpl" timestamp="1612871296545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="838" y="404" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612783822153" />
-    <state width="1860" height="482" key="GridCell.Tab.0.bottom" timestamp="1612812509458">
+    <state x="838" y="404" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612871296545" />
+    <state width="1877" height="638" key="GridCell.Tab.0.bottom" timestamp="1612876213750">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="482" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612812509458" />
-    <state width="1860" height="482" key="GridCell.Tab.0.center" timestamp="1612812509458">
+    <state width="1877" height="638" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612876213750" />
+    <state width="1877" height="638" key="GridCell.Tab.0.center" timestamp="1612876213750">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="482" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612812509458" />
-    <state width="1860" height="482" key="GridCell.Tab.0.left" timestamp="1612812509458">
+    <state width="1877" height="638" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612876213750" />
+    <state width="1877" height="638" key="GridCell.Tab.0.left" timestamp="1612876213750">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="482" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612812509458" />
-    <state width="1860" height="482" key="GridCell.Tab.0.right" timestamp="1612812509458">
+    <state width="1877" height="638" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612876213750" />
+    <state width="1877" height="638" key="GridCell.Tab.0.right" timestamp="1612876213750">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="482" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612812509458" />
+    <state width="1877" height="638" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612876213750" />
     <state x="461" y="212" key="SettingsEditor" timestamp="1612808272591">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
