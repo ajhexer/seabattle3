@@ -235,9 +235,11 @@ void start(){
             if(temb==0){
                 printf("Cannot find data\n");
                 start();
+                return;
             }else if(temb==3){
                 printf("There is no available user!!\n\n");
                 start();
+                return;
             }
             for (int i = 0; i < playersNum; i++) {
                 printf("%d. Name: %s Score: %d\n", i+1,players[i].name, players[i].score);
@@ -263,9 +265,11 @@ void start(){
             if(temb==0){
                 printf("Cannot find data\n");
                 start();
+                return;
             }else if(temb==3){
                 printf("There is no available user!!\n\n");
                 start();
+                return;
             }
             for (int i = 0; i < playersNum; i++) {
                 printf("%d. Name: %s Score: %d\n", i+1,players[i].name, players[i].score);
@@ -308,9 +312,11 @@ void start(){
             if(temb==0){
                 printf("Cannot find data\n");
                 start();
+                return;
             }else if(temb==3){
                 printf("There is no available user!!\n\n");
                 start();
+                return;
             }
             for (int i = 0; i < playersNum; i++) {
                 printf("%d. Name: %s Score: %d\n", i+1,players[i].name, players[i].score);
@@ -340,12 +346,15 @@ void start(){
         if(temb==0){
             printf("Cannot find data\n");
             start();
+            return;
         }else if(temb==1){
             printf("The last game if finished\n");
             start();
+            return;
         }else if(temb==3){
             printf("There is no last game!\n\n");
             start();
+            return;
         }else{
             printMap(1-curT);
             return;
@@ -355,9 +364,11 @@ void start(){
         if(temb==0){
             printf("Cannot find data\n");
             start();
+            return;
         }else if(temb==3){
             printf("ScoreBoard is empty!!\n\n");
             start();
+            return;
 
         }else {
 
@@ -367,6 +378,7 @@ void start(){
             }
             printf("\n\n");
             start();
+            return;
         }
 
     }else if(n==5){
